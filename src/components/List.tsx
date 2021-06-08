@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { IState as IProps } from "../App";
+import { TodoItem } from "../Global.styled";
 
 const TodoList: React.FC<IProps> = ({ todos }) => {
   console.log(todos);
 
   const renderTodos = (): JSX.Element[] => {
-    return todos.map((todo) => (
-      <ul>
-        <li>{todo} </li>
-      </ul>
+    return todos?.map((todo) => (
+      <TodoItem>
+        {">>"} &nbsp; {todo}
+      </TodoItem>
     ));
   };
 
   return (
     <>
-      <h3>Todo's List</h3>
+      <h2>Todo's List</h2>
       {renderTodos()}
     </>
   );

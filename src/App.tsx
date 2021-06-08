@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InputForm from "./components/Forms";
 import TodoList from "./components/List";
+import { Wrapper } from "./Global.styled";
 
 export interface IState {
   todos: string[];
@@ -13,11 +14,11 @@ const App = () => {
   ]);
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <Wrapper>
       <h1>Todo's</h1>
       <InputForm todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} />
-    </div>
+    </Wrapper>
   );
 };
 export default App;
